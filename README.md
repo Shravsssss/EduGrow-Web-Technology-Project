@@ -1,2 +1,7 @@
 # Web-Technology-Project
-Sravya, Ramya, Manognya :)
+
+
+# EduGrow
+  - Live, Learn and Grow
+  
+By Sravya Yepuri, Manognya Singuru, Sri Ramya Priya Vedula ;)
