@@ -2,7 +2,7 @@ var express=require("express");
 var bodyParser=require("body-parser"); 
 
 const mongoose = require('mongoose'); 
-mongoose.connect('mongodb+srv://Shravsssss:sravya2002@cluster0.8zk7f.mongodb.net/EduGrow?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true}); 
+mongoose.connect('.................', {useNewUrlParser: true, useUnifiedTopology: true}); 
 var db=mongoose.connection; 
 db.on('error', console.log.bind(console, "connection error")); 
 db.once('open', function(callback){ 
