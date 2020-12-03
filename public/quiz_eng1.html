@@ -1,0 +1,282 @@
+<html>
+    <head>
+        <title>
+            Quiz English
+        </title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="Question.css">
+        <link rel="stylesheet" href="QuizMain.css">
+        <link rel="stylesheet" href="Answer.css">
+        
+        <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.js"></script>
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.6.1/react-dom.js"></script>
+        <script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 
+		<script crossdomain src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script> 
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+        <style>
+            .nextStep {
+                margin-left:40%;
+                border-radius:20px;
+            }
+            .topnav {
+  overflow: hidden;
+  background-color: #EF8713;
+  border-radius:2px;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#title {
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: bold;
+}
+
+#logo {
+    padding:2px 2px;
+    height:40;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: white;
+}
+            body {
+                background-image:url(exam.png);
+            }
+            .content {
+                margin-top:5%;
+                padding-top:2%;
+                border-radius:20px;
+                margin-left:10%;
+                margin-right:5%;
+                padding-bottom:5%;
+                background-color:cornsilk;
+            }
+            .finalPage{
+                margin-top:3%;
+                
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="topnav" id="nav">
+            
+        </div>
+        <div id = "container">
+
+        </div>
+        <script type="text/babel">
+        class Navbar extends React.Component {
+                render() {
+                    return (
+                       <div>
+                        <a id="logo"><img src="logo.png" height="50" width="50" alt="EduGrow"/></a>
+                        <a id = "title">Edugrow</a>
+                        <a href="/english1">Back</a>
+                        <a href="/chat">Chatbot</a>
+                        <a href="/home">Home</a>
+                        <a href="/">Logout</a>
+                        
+                       </div> 
+                );
+                }
+            }
+            ReactDOM.render(<Navbar />, document.getElementById('nav'));
+        const Question = (props) => {
+            return (
+                <h1>{props.question}</h1>
+            );
+        }
+        const Answer = (props) => {
+    let answers = Object.keys(props.answer)
+        .map((qAnswer, i) => (
+            <li
+            className=
+            {
+                props.correctAnswer === qAnswer ?
+                'correct' : 
+                props.clickedAnswer === qAnswer ? 
+                'incorrect' : ''
+            }
+            onClick={() => props.checkAnswer(qAnswer)}
+            key={qAnswer}>
+                {props.answer[qAnswer]}
+            </li>
+        ));
+
+        return (
+            <div>
+                <ul disabled={props.clickedAnswer ? true : false} className="Answers">
+                    {answers}
+                </ul>
+                <div>
+                    {
+                        props.correctAnswer ?
+                        'Correct Answer!' : 
+                        props.clickedAnswer ? 'Incorrect Answer!' : ''
+                    }
+                </div>
+            </div>
+        );
+}
+class Quiz extends React.Component {
+
+// initiating the local state
+state = {
+    quiestions: {
+        1: 'In a dictionary, words are arranged in _______ order',
+        2: 'Plural of book is :',
+        3: 'The gender of aunt is _______',
+        4: 'Masculine gender of lioness is _______?',
+        5: 'Young one of a cat is a _______',
+        6: 'Young one of a sheep is a ______',
+        7: '_______with my fingers',
+        8: 'Jenny ______ tired',
+        9: 'Where ______ Alice live?',
+        10: '__________ are lots of animals in the zoo'
+    },
+    answers: {
+        1: {
+            1: 'alphabetical',
+            2: 'numerical',
+            3: 'both'
+        },
+        2: {
+            1: 'bookies',
+            2: 'book',
+            3: 'books'
+        },
+        3: {
+            1: 'masculine',
+            2: 'feminine',
+            3: 'woman'
+        },
+        4: {
+            1: 'lion',
+            2: 'lioness',
+            3: 'lions'
+        },
+        5: {
+            1: 'kid',
+            2: 'cub',
+            3: 'kitten'
+        },
+        6: {
+            1: 'lamp',
+            2: 'stag',
+            3: 'lamb'
+        },
+        7: {
+            1: 'touch',
+            2: 'taste',
+            3: 'hear'
+        },
+        8: {
+            1: 'is',
+            2: 'have',
+            3: 'has'
+        },
+        9: {
+            1: 'are',
+            2: 'is',
+            3: 'does'
+        },
+        10: {
+            1: 'There',
+            2: 'There are',
+            3: 'There is'
+        }
+
+    },
+    correctAnswers: {
+        1: '1',
+        2: '3',
+        3: '2',
+        4: '1',
+        5: '3',
+        6: '3',
+        7: '1',
+        8: '1',
+        9: '3',
+        10: '1'
+    },
+    correctAnswer: 0,
+    clickedAnswer: 0,
+    step: 1,
+    score: 0
+}
+
+// the method that checks the correct answer
+checkAnswer = answer => {
+    const { correctAnswers, step, score } = this.state;
+    if(answer === correctAnswers[step]){
+        this.setState({
+            score: score + 1,
+            correctAnswer: correctAnswers[step],
+            clickedAnswer: answer
+        });
+    }else{
+        this.setState({
+            correctAnswer: 0,
+            clickedAnswer: answer
+        });
+    }
+}
+
+// method to move to the next question
+nextStep = (step) => {
+    this.setState({
+        step: step + 1,
+        correctAnswer: 0,
+        clickedAnswer: 0
+    });
+}
+
+render(){
+    let { quiestions, answers, correctAnswer, clickedAnswer, step, score } = this.state;
+    return(
+        <div className="Content">
+            {step <= Object.keys(quiestions).length ? 
+                (<div>
+                    <Question
+                        question={quiestions[step]}
+                    />
+                    <Answer
+                        answer={answers[step]}
+                        step={step}
+                        checkAnswer={this.checkAnswer}
+                        correctAnswer={correctAnswer}
+                        clickedAnswer={clickedAnswer}
+                    />
+                    <button
+                    className="NextStep"
+                    disabled={
+                        clickedAnswer && Object.keys(quiestions).length >= step
+                        ? false : true
+                    }
+                    onClick={() => this.nextStep(step)}>Next</button>
+                </div>) : (
+                    <div className="finalPage">
+                        <h1>You have completed the quiz!</h1>
+                        <p>Your score is: {score} of {Object.keys(quiestions).length}</p>
+                        <p>Thank you!</p>
+                    </div>
+                )
+            }
+        </div>
+    );
+}
+}
+ReactDOM.render(<Quiz />, document.getElementById('container'));
+
+        </script>
+    </body>
+</html>
