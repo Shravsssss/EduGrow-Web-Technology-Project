@@ -1,0 +1,293 @@
+<html>
+    <head>
+        <title>
+            Flashcards for Science grade 1
+        </title>
+        <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.js"></script>
+        <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.6.1/react-dom.js"></script>
+        <script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 
+		    <script crossdomain src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script> 
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+        <link rel="stylesheet" href="flash.css">
+    </head>
+    <body>
+      <div class="topnav" id="nav">
+            
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <div  class="flip-card" id="flip-card"></div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="card">
+            <div  class="flip-card" id="flip-card1"></div>
+          </div>
+        </div>
+        
+        <div class="column">
+          <div class="card">
+            <div  class="flip-card" id="flip-card2"></div>
+          </div>
+        </div>
+        
+        <div class="column">
+          <div class="card">
+            <div  class="flip-card" id="flip-card3"></div>
+          </div>
+        </div>
+      </div>
+      <!----->
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <div  class="flip-card" id="flip-card4"></div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="card">
+            <div  class="flip-card" id="flip-card5"></div>
+          </div>
+        </div>
+        
+        <div class="column">
+          <div class="card">
+            <div  class="flip-card" id="flip-card6"></div>
+          </div>
+        </div>
+        
+        <div class="column">
+          <div class="card">
+            <div  class="flip-card" id="flip-card7"></div>
+          </div>
+        </div>
+      </div>
+      <!---->
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <div  class="flip-card" id="flip-card8"></div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="card">
+            <div  class="flip-card" id="flip-card9"></div>
+          </div>
+        </div>
+        
+        <div class="column">
+          <div class="card">
+            <div  class="flip-card" id="flip-card10"></div>
+          </div>
+        </div>
+        
+        <div class="column">
+          <div class="card">
+            <div  class="flip-card" id="flip-card11"></div>
+          </div>
+        </div>
+      </div>
+        <script type="text/babel">
+        class Navbar extends React.Component {
+                render() {
+                    return (
+                       <div>
+                        <a id="logo"><img src="logo.png" height="50" width="50" alt="EduGrow"/></a>
+                        <a id = "title">Edugrow</a>
+                        <a href="/science2">Back</a>
+                        <a href="/chat">Chatbot</a>
+                        <a href="/home">Home</a>
+                        <a href="/">Logout</a>
+                        
+                        
+                       </div> 
+                );
+                }
+            }
+            ReactDOM.render(<Navbar />, document.getElementById('nav'));
+        class Card extends React.Component {
+            render() {
+                return (
+					<div  className="flip-card-inner">
+						<div  className="flip-card-front">
+							<center><br/><br/><br/><br/>What is Earth’s only natural satellite?</center>
+						</div>
+						<div  className="flip-card-back">
+							<h1>Moon</h1>
+						</div>
+					</div>  
+				);
+            }
+        }
+            ReactDOM.render(<Card />, document.getElementById('flip-card'));
+			class Card1 extends React.Component {
+                render() {
+                    return (
+                      <div  className="flip-card-inner">
+            <div  className="flip-card-front">
+              <center><br/><br/><br/><br/> Dark rain clouds can give out lightning and ____. </center>
+            </div>
+            <div  className="flip-card-back">
+              <h1>Thunder</h1>
+            </div>
+          </div>  
+                );
+                }
+            }
+            ReactDOM.render(<Card1 />, document.getElementById('flip-card1'));
+			class Card2 extends React.Component {
+                render() {
+                    return (
+                      <div  className="flip-card-inner">
+            <div  className="flip-card-front">
+              <center><br/><br/><br/><br/>How does a dog express happiness?</center>
+            </div>
+            <div  className="flip-card-back">
+              <h1>Wagging tail</h1>
+            </div>
+          </div>  
+                );
+                }
+            }
+            ReactDOM.render(<Card2 />, document.getElementById('flip-card2'));
+			class Card3 extends React.Component {
+                render() {
+                    return (
+                      <div  className="flip-card-inner">
+            <div  className="flip-card-front">
+              <center><br/><br/><br/><br/>What are the three states of matter?</center>
+            </div>
+            <div  className="flip-card-back">
+              <h1>Solid, Liquid, and Gas</h1>
+            </div>
+          </div>  
+                );
+                }
+            }
+            ReactDOM.render(<Card3 />, document.getElementById('flip-card3'));
+			class Card4 extends React.Component {
+                render() {
+                    return (
+                      <div  className="flip-card-inner">
+            <div  className="flip-card-front">
+              <center><br/><br/><br/><br/>Frog is a reptile or amphibian?</center>
+            </div>
+            <div  className="flip-card-back">
+              <h1>Amphibian</h1>
+            </div>
+          </div>  
+                );
+                }
+            }
+            ReactDOM.render(<Card4 />, document.getElementById('flip-card4'));
+			class Card5 extends React.Component {
+                render() {
+                    return (
+                      <div  className="flip-card-inner">
+            <div  className="flip-card-front">
+              <center><br/><br/><br/><br/>Where does our food collect after we chew and swallow it?</center>
+            </div>
+            <div  className="flip-card-back">
+              <h1>Stomach</h1>
+            </div>
+          </div>  
+                );
+                }
+            }
+            ReactDOM.render(<Card5 />, document.getElementById('flip-card5'));
+			class Card6 extends React.Component {
+                render() {
+                    return (
+                      <div  className="flip-card-inner">
+            <div  className="flip-card-front">
+              <center><br/><br/><br/><br/>What part of the skeletal system protects the brain?</center>
+            </div>
+            <div  className="flip-card-back">
+              <h1>Skull</h1>
+            </div>
+          </div>  
+                );
+                }
+            }ReactDOM.render(<Card6 />, document.getElementById('flip-card6'));
+			class Card7 extends React.Component {
+                render() {
+                    return (
+                      <div  className="flip-card-inner">
+            <div  className="flip-card-front">
+              <center><br/><br/><br/><br/>Which is the biggest continent in the world?</center>
+            </div>
+            <div  className="flip-card-back">
+              <h1>Asia</h1>
+            </div>
+          </div>  
+                );
+                }
+            }
+            ReactDOM.render(<Card7 />, document.getElementById('flip-card7'));
+			class Card8 extends React.Component {
+                render() {
+                    return (
+                      <div  className="flip-card-inner">
+            <div  className="flip-card-front">
+              <center><br/><br/><br/><br/> How many letters are there in the English alphabet?</center>
+            </div>
+            <div  className="flip-card-back">
+              <h1>26 letters</h1>
+            </div>
+          </div>  
+                );
+                }
+            }
+            ReactDOM.render(<Card8 />, document.getElementById('flip-card8'));
+			class Card9 extends React.Component {
+                render() {
+                    return (
+                      <div  className="flip-card-inner">
+            <div  className="flip-card-front">
+              <center><br/><br/><br/><br/>Which planet is closest to the sun?</center>
+            </div>
+            <div  className="flip-card-back">
+              <h1>Mercury</h1>
+            </div>
+          </div>  
+                );
+                }
+            }
+            ReactDOM.render(<Card9 />, document.getElementById('flip-card9'));
+			class Card10 extends React.Component {
+                render() {
+                    return (
+                      <div  className="flip-card-inner">
+            <div  className="flip-card-front">
+              <center><br/><br/><br/><br/>How many zeros are there in a two-thousand rupee note?</center>
+            </div>
+            <div  className="flip-card-back">
+              <h1>3 (Three)</h1>
+            </div>
+          </div>  
+                );
+                }
+            }
+            ReactDOM.render(<Card10 />, document.getElementById('flip-card10'));
+            class Card11 extends React.Component {
+                render() {
+                    return (
+                      <div  className="flip-card-inner">
+            <div  className="flip-card-front">
+              <center><br/><br/><br/><br/>Potatoes grow at the _?</center>
+            </div>
+            <div  className="flip-card-back">
+              <h1>Root</h1>
+            </div>
+          </div>  
+                );
+                }
+            }
+            ReactDOM.render(<Card11 />, document.getElementById('flip-card11'));
+      </script>
+    </body>
+</html>

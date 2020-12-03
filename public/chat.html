@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Chatbot</title>
+	<link rel="icon" href="bot.png" />
+	<link rel="stylesheet" href="style.css" />
+	<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.js"></script>
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.6.1/react-dom.js"></script>
+        <script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 
+		<script crossdomain src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script> 
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+</head>
+
+<body>
+	<div class="topnav" id="nav">
+            
+	</div>
+	<div id="container" class="container">
+		
+		<div id="chat" class="chat">
+			<div id="messages" class="messages"><center>Chatbot</center></div>
+			<input id="input" type="text" placeholder="Say something..." autocomplete="off" autofocus="true" />
+		</div>
+	
+	</div>
+	<script type='text/babel'>
+	class Navbar extends React.Component {
+                render() {
+                    return (
+                       <div>
+                        <a id="logo"><img src="logo.png" height="50" width="50" alt="EduGrow"/></a>
+                        <a id = "title">Edugrow</a>
+                        <a href="/home">Home</a>
+                        <a href="/chat">Chatbot</a>
+                        <a href="/">Logout</a>
+                       </div> 
+                );
+                }
+            }
+            ReactDOM.render(<Navbar />, document.getElementById('nav'));
+	</script>
+
+</body>
+<script type="text/javascript" src="index.js" ></script>
+<script type="text/javascript" src="constants.js" ></script>
+<script type="text/javascript" src="speech.js" ></script>
+
+</html>
