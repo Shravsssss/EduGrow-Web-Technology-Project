@@ -45,7 +45,7 @@ const replies = [
   ["I am infinite"],
   ["I am just a bot", "I am a bot. What are you?"],
   ["The one true God, JavaScript"],
-  ["I am nameless", "I don't have a name"],
+  ["I am edubot", "I am edubot created by edugrow team"],
   ["I love you too", "Me too"],
   ["Have you ever felt bad?", "Glad to hear it"],
   ["Why?", "Why? You shouldn't!", "Try watching TV"],
