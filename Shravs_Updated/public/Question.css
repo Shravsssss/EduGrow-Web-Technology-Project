@@ -1,0 +1,12 @@
+.Content h1{
+    margin: 15px 0;
+    font-size: 25px;
+    /*font-family: Arial,sans-serif;*/
+    font-family: Lucida Console,Monospace;
+    font-weight: normal;
+    color: #800080;
+    text-transform: none;
+    text-shadow: none;
+    text-align: left;
+    margin-left:15%;
+}

@@ -1,0 +1,300 @@
+<html>
+    <head>
+        <title>
+            Home
+        </title>
+        <link rel="icon" href="logo.png" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+        <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.js"></script>
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.6.1/react-dom.js"></script>
+        <script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 
+		<script crossdomain src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script> 
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+        <style>
+   
+            body {
+                background-image:linear-gradient(to bottom right, #ff4d94, #e6f7ff);
+            }
+            .topnav {
+  overflow: hidden;
+  background-color: #EF8713;
+  border-radius:2px;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#title {
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: bold;
+}
+
+#logo {
+    padding:2px 2px;
+    height:40;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: white;
+}
+            #container button {
+                border-radius: 20px;
+                border: 1px solid #FFFFFF;
+                background-color: #ff4d94;
+                color: #ffffff;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 14px 35px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                margin-bottom: 2%;
+            }
+            #container1 button {
+                border-radius: 20px;
+                border: 1px solid #FFFFFF;
+                background-color: #4dc3ff;
+                color: #ffffff;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 14px 35px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+            *{
+            box-sizing: border-box;
+            }
+            .column {
+            float: left;
+            padding: 10px;
+            height: 100%; 
+            
+            }
+
+            .left {
+                padding-top:20%;
+                margin-right:0.5%;
+            width: 50%;
+            background-image: url("bg_col1.png");
+            border-radius: 2%;
+            }
+
+            .right {
+            width: 49.5%;
+            border-radius: 2%;
+            background-color: #33AB1B;
+            color:white;
+            }
+
+            .row:after {
+            content: "";
+            display: table;
+            clear: both;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="topnav" id="nav">
+            
+          </div>
+        <div class="row">
+            <div class="column left">
+                <center>
+                <div class="container mt-5" id="container">
+           
+                </div>
+                <div class="container mt-5" id="container1">
+                    
+                </div>
+            </center>
+            </div>
+            <div class="column right" >
+                <div id="content"></div>
+                <div id="chat"></div>
+            </div>
+          </div>
+          <div id="contacts">
+
+          </div>
+        
+          
+        <script type="text/babel">
+            class Navbar extends React.Component {
+                render() {
+                    return (
+                       <div>
+                        <a id="logo"><img src="logo.png" height="50" width="50" alt="EduGrow"/></a>
+                        <a id = "title">Edugrow</a>
+                        <a href="/covid">Covid</a>
+                        <a href="#contacts">Contact</a>
+                        <a href="/chat">Chatbot</a>
+                        <a href="/">Logout</a>
+                       </div> 
+                );
+                }
+            }
+            ReactDOM.render(<Navbar />, document.getElementById('nav'));
+
+            class Card extends React.Component {
+            constructor() {
+                super();
+                
+                this.state = {
+                showMenu: false,
+                };
+                
+                this.showMenu = this.showMenu.bind(this);
+                this.closeMenu = this.closeMenu.bind(this);
+            }
+            
+            showMenu(event) {
+                event.preventDefault();
+                
+                this.setState({ showMenu: true }, () => {
+                document.addEventListener('click', this.closeMenu);
+                });
+            }
+            
+            closeMenu() {
+                this.setState({ showMenu: false }, () => {
+                document.removeEventListener('click', this.closeMenu);
+                });
+            }
+            science1() {
+                location.href="/science1";
+            }
+            math1() {
+                location.href="/math1";
+            }
+            english1() {
+                location.href="english1.html";
+            }
+
+            render() {
+                return (
+                <div>
+                    <button onClick={this.showMenu}>
+                    Class 1
+                    </button>
+                    
+                    {
+                    this.state.showMenu
+                        ? (
+                        <div className="menu">
+                            <button onClick={this.science1}> Science </button>
+                            <button onClick={this.math1}> Mathematics </button>
+                            <button onClick={this.english1}> English </button>
+                        </div>
+                        )
+                        : (
+                        null
+                        )
+                    }
+                </div>
+                );
+            }
+            }
+            ReactDOM.render(<Card />, document.getElementById('container'));
+
+            class Class2 extends React.Component {
+            constructor() {
+                super();
+                
+                this.state = {
+                showMenu: false,
+                };
+                
+                this.showMenu = this.showMenu.bind(this);
+                this.closeMenu = this.closeMenu.bind(this);
+            }
+            
+            showMenu(event) {
+                event.preventDefault();
+                
+                this.setState({ showMenu: true }, () => {
+                document.addEventListener('click', this.closeMenu);
+                });
+            }
+            
+            closeMenu() {
+                this.setState({ showMenu: false }, () => {
+                document.removeEventListener('click', this.closeMenu);
+                });
+            }
+            science2() {
+                location.href="/science2";
+            }
+            math2() {
+                location.href="/math2";
+            }
+            english2() {
+                location.href="/english2";
+            }
+
+            render() {
+                return (
+                <div>
+                    <button onClick={this.showMenu}>
+                    Class 2
+                    </button>
+                    
+                    {
+                    this.state.showMenu
+                        ? (
+                        <div className="menu">
+                            <button onClick={this.science2}> Science </button>
+                            <button onClick={this.math2}> Mathematics </button>
+                            <button onClick={this.english2}> English </button>
+                        </div>
+                        )
+                        : (
+                        null
+                        )
+                    }
+                </div>
+                );
+            }
+            }
+            ReactDOM.render(<Class2 />, document.getElementById('container1'));
+
+class Content extends React.Component {
+                render() {
+                    return (
+                        <div>
+                            <h1>Edugrow</h1>
+                            <h3>Live, Learn & Grow</h3>
+                            <p>Hey, Kiddo!! Welcome to EduGrow!</p>
+			    <p>EduGrow's motto is to "Live, Learn & Grow!"</p>
+			    <p>We at EduGrow, help kids studying in elementary school.</p>
+			    <p>Come and join us. We are excited to help you on your journey!</p>
+			    <img src="quote.jpg" width="300" height="300"/>
+			    <p>Meet the team: Manognya Singuru, Sri Ramya Priya Vedula & Sravya Yepuri</p>
+                        </div>
+                );
+                }
+            }
+            ReactDOM.render(<Content />, document.getElementById('content'));
+
+            class Contact extends React.Component {
+                render() {
+                    return (
+                       <div>
+                         <p>Phone number: 1234567890 </p>
+                         <p>Email: edugrow@gmail.com </p>
+                       </div> 
+                );
+                }
+            }
+            ReactDOM.render(<Contact />, document.getElementById('contacts'));
+            
+          </script>
+    </body>
+</html>
+
