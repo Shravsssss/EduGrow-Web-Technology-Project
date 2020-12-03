@@ -1,1 +1,0 @@
-mongodb+srv://Shravsssss:sravya2002@cluster0.8zk7f.mongodb.net/EduGrow?retryWrites=true&w=majority
