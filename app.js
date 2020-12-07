@@ -2,7 +2,7 @@ var express=require("express");
 var bodyParser=require("body-parser"); 
 
 const mongoose = require('mongoose'); 
-mongoose.connect('.................', {useNewUrlParser: true, useUnifiedTopology: true}); 
+mongoose.connect('mongodb://localhost:27017/users', {useNewUrlParser: true, useUnifiedTopology: true}); 
 var db=mongoose.connection; 
 db.on('error', console.log.bind(console, "connection error")); 
 db.once('open', function(callback){ 
@@ -157,7 +157,7 @@ app.get('/early', function(req, res) {
 })
 
 app.get('/quiz_sc2', function(req, res) {
-    return res.redirect('quiz_sc1.html'); //to change
+    return res.redirect('quiz_sc1.html'); 
 })
 
 app.get('/flash_sc2', function(req, res) {
@@ -171,11 +171,11 @@ app.get('/math1', function(req, res) {
 })
 
 app.get('/add', function(req, res) {
-    return res.redirect('addition.html');//to do
+    return res.redirect('addition.html');
 })
 
 app.get('/sub', function(req, res) {
-    return res.redirect('subtract.html');//to do
+    return res.redirect('subtract.html');
 })
 
 app.get('/quiz_ma1', function(req, res) {
@@ -199,7 +199,7 @@ app.get('/givetake', function(req, res) {
 })
 
 app.get('/quiz_ma2', function(req, res) {
-    return res.redirect('quiz_ma1.html'); //to change
+    return res.redirect('quiz_ma1.html'); 
 })
 
 app.get('/flash_ma2', function(req, res) {
@@ -240,7 +240,7 @@ app.get('/noun', function(req, res) {
 })
 
 app.get('/quiz_eng2', function(req, res) {
-    return res.redirect('quiz_eng1.html'); //to change
+    return res.redirect('quiz_eng1.html'); 
 })
 
 app.get('/flash_eng2', function(req, res) {
