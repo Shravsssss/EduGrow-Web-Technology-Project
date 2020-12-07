@@ -3,7 +3,7 @@
 
 # EduGrow
   - Live, Learn and Grow
-  This is a website designed for children in classes 1 and 2, they can choose between three subjects, mathematics, science and english. They can give tests and play around with the flash cards. Keeping the current situation in mind, we have also created a page listing out COVID precautions. There is a simple chatbot for the kids to help them navigate to the different pages.
+This is a website designed for children in classes 1 and 2, they can choose between three subjects, mathematics, science and english. They can give tests and play around with the flash cards. Keeping the current situation in mind, we have also created a page listing out COVID precautions. There is a simple chatbot for the kids to help them navigate to the different pages.
   Technologies used:
   MERN Stack, HTML, CSS, Javascript
   
